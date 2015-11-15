@@ -189,9 +189,9 @@
 		 		return d.Key;
 		 	});
 		 	feature.enter().append("circle").attr("fill",function(d){
-		 		if(d.UCR==615) return "red";
-		 		if(d.UCR==625) return "yellow";
-		 		if(d.UCR==635) return "green";
+		 		if(d.UCR<620) return "red";
+		 		if(d.UCR>620&&d.UCR<630) return "yellow";
+		 		if(d.UCR>630) return "green";
 
 		 	}).attr("r",0).transition().duration(100).attr("r",function(d){
 		 		return map.getZoom();
