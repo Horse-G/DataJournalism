@@ -130,6 +130,7 @@
 	 
 	var popup = L.popup();
 
+	/*
 	function onMapClick(e) {
 		popup
 			.setLatLng(e.latlng)
@@ -156,17 +157,17 @@
 
 
 	
-	d3.csv("theft2.csv", function(collection) {
+	d3.csv("Final Data.csv", function(collection) {
 		/* Add a LatLng object to each item in the dataset */
 		collection.forEach(function(d) {
-			d.LatLng = new L.LatLng(d.LAT,d.LNG)
+			d.LatLng = new L.LatLng(d.latitude,d.longtitude)
 		})
 
-		var time = 1262304001;
+		var time = 1388534400;
 		var previousTime;
 
 		var filtered = collection.filter(function(d){
-			return (d.UnixDate < 1262304001);
+			return (d.UnixDate < 1388534400);
 		});
 
 
@@ -179,7 +180,7 @@
 
 			console.log(time);
 			grab = collection.filter(function(d){
-				return (d.UnixDate < time)&&(d.UnixDate > previousTime);	
+				return (d.UnixTime < time)&&(d.UnixTime > previousTime);	
 			});
 		 	//filtered = filtered.concat(grab);
 		 	filtered = grab;
@@ -189,9 +190,9 @@
 		 		return d.Key;
 		 	});
 		 	feature.enter().append("circle").attr("fill",function(d){
-		 		if(d.UCR<620) return "red";
-		 		if(d.UCR>620&&d.UCR<630) return "yellow";
-		 		if(d.UCR>630) return "green";
+		 		if(d.TRANSACTION_AMT<620) return "red";
+		 		if(d.TRANSACTION_AMT>620&&d.TRANSACTION_AMT<1300) return "yellow";
+		 		if(d.TRANSACTION_AMT>1300) return "green";
 
 		 	}).attr("r",0).transition().duration(100).attr("r",function(d){
 		 		return map.getZoom();
