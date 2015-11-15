@@ -181,7 +181,7 @@
 
 			console.log(time);
 			grab = collection.filter(function(d){
-				return (d.UnixTime =< time)&&(d.UnixTime >= previousTime);	
+				return (d.UnixTime <= time)&&(d.UnixTime >= previousTime);	
 			});
 			console.log(" | "+previousTime+" | "+time);
 		 	//filtered = filtered.concat(grab);
