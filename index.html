@@ -157,7 +157,7 @@
 
 
 	
-	d3.csv("Final Data.csv", function(collection) {
+	d3.csv("DataSource.csv", function(collection) {
 		/* Add a LatLng object to each item in the dataset */
 		collection.forEach(function(d) {
 			d.LatLng = new L.LatLng(d.latitude,d.longtitude)
@@ -167,7 +167,7 @@
 		var previousTime;
 
 		var filtered = collection.filter(function(d){
-			return (d.UnixDate < 1388534400);
+			return (d.UnixTime < 1388534400);
 		});
 
 
@@ -203,7 +203,7 @@
 		 	feature.attr("cx",function(d) { return map.latLngToLayerPoint(d.LatLng).x});
 		 	feature.attr("cy",function(d) { return map.latLngToLayerPoint(d.LatLng).y});
 
-
+			console.log("setTimeout to be called");
 		 	setTimeout(update,100);
 
 		 }
@@ -214,9 +214,10 @@
 		 	dateString = newDate.toString();
 		 	dateString = dateString.slice(0,16);
 		 	document.getElementById("timestamp").innerHTML = dateString;
+			console.log("showDateTime called "+dateString);
 		 }
 
-		
+		 console.log("undate to be called");
 		 update();
 		})			 
 </script>
