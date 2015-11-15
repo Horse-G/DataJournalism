@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <meta charset="utf-8">
 <style>
 	.state{
@@ -58,9 +58,9 @@
 
 	function tooltipHtml(n, d){	/* function to create html content string in tooltip div. */
 		return "<h4>"+n+"</h4><table>"+
-			"<tr><td>Low</td><td>"+(d.low)+"</td></tr>"+
-			"<tr><td>Average</td><td>"+(d.avg)+"</td></tr>"+
-			"<tr><td>High</td><td>"+(d.high)+"</td></tr>"+
+			"<tr><td>Total</td><td>"+(d.high)+"</td></tr>"+
+			"<tr><td>Democratic</td><td>"+(d.avg)+"</td></tr>"+
+			"<tr><td>Republican</td><td>"+(d.low)+"</td></tr>"+
 			"</table>";
 	}
 	
@@ -71,11 +71,11 @@
 	"CO", "NM", "OR", "ND", "SD", "NE", "IA", "MS", "IN", "IL", "MN", 
 	"WI", "MO", "AR", "OK", "KS", "LS", "VA"]
 		.forEach(function(d){ 
-			var low=Math.round(100*Math.random()), 
-				mid=Math.round(100*Math.random()), 
-				high=Math.round(100*Math.random());
-			sampleData[d]={low:d3.min([low,mid,high]), high:d3.max([low,mid,high]), 
-					avg:Math.round((low+mid+high)/3), color:d3.interpolate("#ffffcc", "#800026")(low/100)}; 
+			var Total=Math.round(1000000*Math.random()), 
+				Dem=Math.round(1000000*Math.random()), 
+				Rep=Math.round(1000000*Math.random());
+				sampleData[d]={low:d3.min([Dem,Rep]), high:d3.max([Dem,Rep]), 
+					avg:Math.round((Rep+Dem)/2), color:d3.interpolate("#ffffcc", "#c9f427")(Total/1000000)}; 
 		});
 	
 	/* draw states on id #statesvg */	
