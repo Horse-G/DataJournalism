@@ -160,7 +160,7 @@
 	d3.csv("DataSource.csv", function(collection) {
 		/* Add a LatLng object to each item in the dataset */
 		collection.forEach(function(d) {
-			d.LatLng = new L.LatLng(d.latitude,d.longtitude)
+			d.LatLng = new L.LatLng(d.LAT,d.LNG)
 		})
 
 		var time = 1388534400;
@@ -200,7 +200,7 @@
 
 		 	feature.exit().transition().duration(250).attr("r",0).remove();
 
-		 	feature.attr("cx",function(d) { return map.latLngToLayerPoint(d.LatLng).x});
+		 	feature.attr("cx",function(d) { return map.latLngToLayerPoint(d.x).x});
 		 	feature.attr("cy",function(d) { return map.latLngToLayerPoint(d.LatLng).y});
 
 			console.log("setTimeout to be called");
