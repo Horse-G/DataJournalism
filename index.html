@@ -158,7 +158,7 @@
 
 
 	
-	d3.csv("data.csv", function(collection) {
+	d3.csv("data_final.csv", function(collection) {
 		/* Add a LatLng object to each item in the dataset */
 		collection.forEach(function(d) {
 			d.LatLng = new L.LatLng(d.LAT,d.LNG)
