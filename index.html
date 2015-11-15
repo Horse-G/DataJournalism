@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Philly Bike Theft Data (January 2010 thru September 16th 2013</title>
+	<title>2015 Presidential Campaign Finance Map</title>
 
 	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
 	<script src="http://mbostock.github.com/d3/d3.v2.js?2.8.1"></script>
@@ -67,7 +67,7 @@
 		position: absolute;
 		top: 87px;
 		height: 100px;
-		width: 117px;
+		width: 130px;
 	}
 	
 	a,a:hover, a:visited{
@@ -85,6 +85,7 @@
 	circle
 	{
 		fill-opacity: 0.6;
+		
 	}
 
 	</style>
@@ -194,8 +195,8 @@
 		 		if(d.TRANSACTION_AMT>620&&d.TRANSACTION_AMT<1300) return "yellow";
 		 		if(d.TRANSACTION_AMT>1300) return "green";
 
-		 	}).attr("r",5).transition().duration(200).attr("r",function(d){
-		 		return map.getZoom();
+		 	}).attr("r",15).transition().duration(200).attr("r",function(d){
+		 		return 15*map.getZoom();
 		 	});
 
 		 	feature.exit().transition().duration(250).attr("r",7).remove();
