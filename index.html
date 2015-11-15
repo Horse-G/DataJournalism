@@ -196,11 +196,11 @@
 		 		if(d.TRANSACTION_AMT>620&&d.TRANSACTION_AMT<1300) return "yellow";
 		 		if(d.TRANSACTION_AMT>1300) return "green";
 
-		 	}).attr("r",15).transition().duration(200).attr("r",function(d){
+		 	}).attr("r",0).transition().duration(200).attr("r",function(d){
 		 		return 15*map.getZoom();
 		 	});
 			console.log("map size: " + 15*map.getZoom());
-		 	feature.exit().transition().duration(250).attr("r",7).remove();
+		 	feature.exit().transition().duration(250).attr("r",0).remove();
 
 		 	feature.attr("cx",function(d) { return map.latLngToLayerPoint(d.x).x});
 		 	feature.attr("cy",function(d) { return map.latLngToLayerPoint(d.LatLng).y});
