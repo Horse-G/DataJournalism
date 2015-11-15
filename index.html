@@ -183,6 +183,7 @@
 			grab = collection.filter(function(d){
 				return (d.UnixTime < time)&&(d.UnixTime > previousTime);	
 			});
+			console.log(d.UnixTime+" | "+previousTime+" | "+time);
 		 	//filtered = filtered.concat(grab);
 		 	filtered = grab;
 		 	console.log(filtered);
@@ -198,13 +199,13 @@
 		 	}).attr("r",15).transition().duration(200).attr("r",function(d){
 		 		return 15*map.getZoom();
 		 	});
-
+			console.log("map size: " + 15*map.getZoom());
 		 	feature.exit().transition().duration(250).attr("r",7).remove();
 
 		 	feature.attr("cx",function(d) { return map.latLngToLayerPoint(d.x).x});
 		 	feature.attr("cy",function(d) { return map.latLngToLayerPoint(d.LatLng).y});
 
-			console.log("setTimeout to be called");
+			
 		 	setTimeout(update,100);
 
 		 }
