@@ -97,15 +97,15 @@
 	<div id = "key">
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style= "width:16px; height:16px">
 			<circle cx="8" cy="8" r="8" fill="red"/>
-		</svg><p>Over $200</p>
+		</svg><p>Over $1200</p>
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style= "width:16px; height:16px">
 			<circle cx="8" cy="8" r="8" fill="yellow"/>
-		</svg><p>$50-$199</p>
+		</svg><p>$600-$1200</p>
 		<svg xmlns="http://www.w3.org/2000/svg" version="1.1" style= "width:16px; height:16px">
 			<circle cx="8" cy="8" r="8" fill="green"/>
-		</svg><p>Under $50</p>
+		</svg><p>Under $600</p>
 	</div>
-	<div id = "footer">By <a href = "https://twitter.com/MarshalMa">@MarshalMa</a> | Made at <a href = "http://www.journalism.columbia.edu/">Columbia Journalism School</a> | Data provided by the <a href = "http://www.fec.gov/">Federal Election Commission</a></div>
+	<div id = "footer">By <a href = "https://twitter.com/MarshalMa">@MarshalMa</a> of Group <a href = "https://github.com/Horse-G/DataJournalism"> Sleepless@Pulitzer| Made at <a href = "http://www.journalism.columbia.edu/">Columbia Journalism School</a> | Data provided by the <a href = "http://www.fec.gov/">Federal Election Commission</a></div>
 	
 
 	
@@ -194,11 +194,11 @@
 		 		if(d.TRANSACTION_AMT>620&&d.TRANSACTION_AMT<1300) return "yellow";
 		 		if(d.TRANSACTION_AMT>1300) return "green";
 
-		 	}).attr("r",0).transition().duration(100).attr("r",function(d){
+		 	}).attr("r",5).transition().duration(200).attr("r",function(d){
 		 		return map.getZoom();
 		 	});
 
-		 	feature.exit().transition().duration(250).attr("r",0).remove();
+		 	feature.exit().transition().duration(250).attr("r",7).remove();
 
 		 	feature.attr("cx",function(d) { return map.latLngToLayerPoint(d.x).x});
 		 	feature.attr("cy",function(d) { return map.latLngToLayerPoint(d.LatLng).y});
