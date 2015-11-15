@@ -201,10 +201,10 @@
 		 	});
 			console.log("map size: " + 15*map.getZoom());
 		 	feature.exit().transition().duration(250).attr("r",0).remove();
-
-		 	feature.attr("cx",function(d) { return map.latLngToLayerPoint(d.x).x});
-		 	feature.attr("cy",function(d) { return map.latLngToLayerPoint(d.LatLng).y});
-
+			
+			feature.attr("cx",function(d) { return map.latLngToLayerPoint(d.LatLng).x});
+			feature.attr("cy",function(d) { return map.latLngToLayerPoint(d.LatLng).y});
+			
 			
 		 	setTimeout(update,100);
 
